@@ -4,66 +4,63 @@ import Layout from '../layouts/BlogPost.astro';
 
 <Layout
   title="Sobre Mim"
-  description="Lorem ipsum dolor sit amet"
-  pubDate={new Date('December 22 2024')}
+  pubDate={new Date('April 30 2025')}
 >
-  <div class={' flex justify-center mb-4'}>
-  <img 
-  src="/Untitled.jpg" 
-  alt="Foto de Perfil" 
-  class={' w-10 h-10 mr-1 md:my-2 md:mr-0 md:w-48 md:h-48 rounded-full text-center '}
-  />
-  </div> 
-    
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-    labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-    viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-    adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-    et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-    vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-    sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-  </p>
+   <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 mx-0 px-0">
+    <img 
+      src="/foto-perfil.jpg" 
+      alt="Foto de Perfil" 
+      class="w-64 h-64 rounded-full border-4 border-gray-300 shadow-xl transition-transform transform hover:scale-110 flex"
+    />
+    <h1 class="text-center font-bold">Oi, eu sou o Felipe!</h1>
+  </div>
 
-  <p>
-    Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-    tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-    blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-    porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-    massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-    Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-    bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-    massa massa ultricies mi.
-  </p>
+  <div class="text-center text-2xl mb-8">
+    <p class="mt-2 text-gray-600">Desenvolvedor Full-Stack | Nest.js, Next.js, MySQL</p>
+    <p class='mt-2'> Tenho 18 anos e sempre fui apaixonado por tecnologia e inovação. Gosto de aprender novas tecnologias no meu tempo livre, tenho como objetivo desenvolver soluções eficientes.</p>
+  </div>
 
-  <p>
-    Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-    suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-    nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-    turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-    dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-    semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-    vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-    facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-    vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-    urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-  </p>
+  <div class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Tecnologias que eu utilizo</h2>
+    <ul class="gap-4 text-gray-700">
+      <li class="flex items-center space-x-2">
+        <span class="font-semibold">Frontend:</span>
+        <span>React, Next.js, Tailwind CSS</span>
+      </li>
+      <li class="flex items-center space-x-2">
+        <span class="font-semibold">Backend:</span>
+        <span>Node.js, Nest.js</span>
+      </li>
+      <li class="flex items-center space-x-2">
+        <span class="font-semibold">Banco de Dados:</span>
+        <span>MySQL</span>
+      </li>
+      <li class="flex items-center space-x-2">
+        <span class="font-semibold">Ferramentas:</span>
+        <span>Docker, Git, Vim, Linux</span>
+      </li>
+    </ul>
+  </div>
 
-  <p>
-    Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-    viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-    scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-    gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-    pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-    blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-    cursus metus aliquam eleifend mi.
-  </p>
+  <div class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Experiência Profissional</h2>
+    <p><strong>Estagiário de Desenvolvimento Full-Stack</strong> - MindGroup Consulting & Marketing | Janeiro de 2025 - Presente</p>
+    <ul class="list-disc ml-5">
+      <li>Desenvolvimento e manutenção de aplicações web utilizando React, Next.js e Nest.js.</li>
+      <li>Integração de APIs RESTful e otimização de performance.</li>
+      <li>Colaboração com equipes multidisciplinares para entrega de projetos.</li>
+    </ul>
+  </div>
 
-  <p>
-    Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-    nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-    tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-    ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-    proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-  </p>
+<div class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Experiência Acadêmica</h2>
+    <p><strong>Técnico em Desenvolvimento de Sistemas</strong> – SENAI "Gaspar Ricardo Júnior" | Janeiro de 2023 – Dezembro de 2024</p>
+    <p><strong>Superior em Desenvolvimento de Sistemas</strong> – SENAI "Gaspar Ricardo Júnior" | Janeiro de 2025 – Dezembro de 2026</p>
+  </div>
+
+  <div class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Minha Jornada</h2>
+    <p>Desde pequeno, sempre fui fascinado por computadores e como as coisas funcionam por trás das telas. Ao longo dos anos, fui me aprofundando no mundo do desenvolvimento web.</p>
+    <p>Se você se identifica com a minha visão ou deseja colaborar em projetos, sinta-se à vontade para me contatar. Vamos criar algo incrível!</p>
+  </div>
 </Layout>
