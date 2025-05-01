@@ -2,65 +2,119 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, GITHUB_URL} from '../consts.ts';
+import { SITE_TITLE, SITE_DESCRIPTION, GITHUB_URL } from '../consts.ts';
 import { getCollection } from 'astro:content';
+
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 const lastPosts = posts.slice(0, 4);
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col">
     <Header />
-    <main>
-      <div class={'flex px-8 bg-gray-900 p-4 rounded-xl max-w-xl mx-auto'}>
-        <div>
-          <h1 class={'text-2xl md:text-5xl text-center my-5 font-semibold'}>✨ Fala ae, Dev! ✨</h1>
-          <div class={'flex content-center space-x-4'}>
-            <div class={'col'}>
-              <p class={'mt-2'}>
+
+    <main class="flex-1 flex items-center justify-center px-4 py-10">
+      <div class="flex flex-col md:flex-row justify-between w-full max-w-7xl gap-6">
+        
+        <!-- Bloco 1: Boas-vindas -->
+        <div class="flex px-8 border border-[#e4dcc9] p-4 rounded-xl max-w-xl w-full">
+          <div>
+            <h1 class="text-2xl md:text-5xl text-center my-5 font-semibold">✨ Fala ae, Dev! ✨</h1>
+            <div class="space-y-4">
+              <p class="mt-2">
                 <img 
-                src="/Untitled.jpg" 
-                alt="Foto de Perfil" 
-                class={' inline-block w-10 h-10 mr-1 md:my-2 md:mr-0 md:w-12 md:h-12 rounded-full border-2 border-gray-300 align-self'}
-              />
+                  src="/Untitled.jpg" 
+                  alt="Foto de Perfil" 
+                  class="inline-block w-12 h-12 mr-2 rounded-full border-2 border-gray-300 align-middle"
+                />
                 Bem-vindo ao meu blog! Aqui eu falo de programação, tecnologia e como está sendo minha jornada
                 de aprendizado como desenvolvedor. Espero que você goste do que encontrar por aqui e que possa
                 aprender algo novo comigo.
-
               </p>
-              <ul>
-                <p> Últimos posts: </p>
-                {lastPosts.map((post) => (
-          <li>
-                  <a href={`/blog/${post.id}`}>
-                    <p class="title">{post.data.title}</p> </a> </li>))}
-                <ul>
-                  <p>
-                    Quer saber mais sobre minha jornada como desenvolvedor? Acesse a página <a href={`/about`}>Sobre</a> para conhecer mais!
-                  </p>
-                  <p>
-                    Me siga no <a href={GITHUB_URL}>GitHub</a> para conferir meus projetos em andamento e contribuições para a comunidade.
-                  </p>
+
+              <div>
+                <p>Últimos posts:</p>
+                <ul class="list-disc list-inside">
+                  {lastPosts.map((post) => (
+                    <li>
+                      <a href={`/blog/${post.id}`} class="text-blue-600 hover:underline">
+                        {post.data.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <p>
+                Quer saber mais sobre minha jornada como desenvolvedor? Acesse a página
+                <a href="/about" class="text-blue-600 hover:underline"> Sobre</a>.
+              </p>
+              <p>
+                Me siga no
+                <a href={GITHUB_URL} class="text-blue-600 hover:underline"> GitHub</a> para conferir meus projetos!
+              </p>
             </div>
           </div>
         </div>
 
-      </div>
+        <!-- Bloco 2: Setup -->
+        <div class="flex flex-col flex-1 gap-4">
+          <div class="p-4 rounded-xl border border-[#e4dcc9]">
+            <p class="font-semibold text-2xl mb-2">🧰 Meu setup atual</p>
+            <ul class="list-disc list-inside text-[20px] leading-relaxed">
+              <li><strong>Editor:</strong> Neovim + LazyVim</li>
+              <li><strong>Terminal:</strong> Alacritty + Zsh + Zellij</li>
+              <li><strong>SO:</strong> Manjaro Linux</li>
+              <li><strong>Shell Theme:</strong> Kanagawa</li>
+              <li><strong>Main Language:</strong> TypeScript</li>
+            </ul>
+            <a href="/" class='text-blue-600 hover:underline'>dotfiles</a>
+          </div>
+          
+          <div class="bg-black text-green-400 font-mono md:text-sm text-xs p-4 rounded-xl whitespace-pre leading-snug overflow-x-auto max-w-full shadow-md">
+            felipe in ~
+            ➜ fastfetch
 
+            PC: MS-Challenger A520M
+            ├ CPU: AMD Ryzen 5 5600 (12) @ 4.47 GHz
+            ├ GPU: AMD Radeon RX 5500 XT [Discrete]
+            ├ Display 1: 1080x1920 @ 165 Hz (as 607x1080) in 24" [Ext] *
+            ├ Display 2: 1920x1080 @ 240 Hz in 24" [Ext]
+            ├ Storage: 223.28 GiB - btrfs
+            ├ RAM: 15.56 GiB
+            └ Disabled: [not specified]
+
+            OS: Manjaro Linux x86_64
+            ├ Kernel: Linux 6.12.21-4-MANJARO
+            └ Shell: zsh 5.9
+
+            Desktop Environment: GNOME 48.0
+            ├ Window Manager: Mutter (Wayland)
+            ├ Theme: Yaru-purple-dark
+            ├ Icon Theme: Papirus-Dark-Maia [Qt], Yaru-purple [GTK2/3/4]
+            ├ Font: Yaru (24px)
+            ├ Terminal: alacritty (11pt)
+            └ Terminal Version: alacritty 0.15.1
+          </div>
+        </div>
+
+      </div>
     </main>
+
     <Footer />
   </body>
+
   <style>
-  p {
-    text-align: justify;
-    text-justify: inter-word;
-  }
+    p {
+      text-align: justify;
+      text-justify: inter-word;
+    }
   </style>
 </html>
-
 
