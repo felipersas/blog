@@ -32,7 +32,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
-				color: rgb(var(--gray-dark));
 			}
 			.title {
 				margin-bottom: 1em;
@@ -55,7 +54,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 	<body>
 		<Header />
-    <main class={' mx-auto container '}>
+    <main class={' mx-auto p-0 container '}>
       <article >
         <div class={'hero-image'}>
           {heroImage && <img class={'md:w-1/2'} src={heroImage} alt="" />}
